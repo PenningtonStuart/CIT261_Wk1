@@ -8,31 +8,35 @@
     <!--Part One-->
     <h2>Step 1</h2>
     <h3>Enter and Output</h3>
-    Enter a number: <input id="part1Input" type="text" />
+    <input id="part1Input" type="text" placeholder="Enter a number"/>
     <br>
     <button id="part1Button" onclick="partOne()">Submit</button>
     <br>
     <div id="part1result"></div>
+    <br>
 
     <!--Part Two -->
     <h2>Step 2</h2>
     <h3>Sum all numbers prior to number submitted</h3>
-    Enter a single number: <input id="part2Input" type="text" />
+    <input id="part2Input" type="text" placeholder="Enter a number"/>
     <br>
     <button id="part2Button" onclick="partTwo()">Sum</button>
     <br>
     This is the sum of all the numbers prior to the number you entered: <div id="part2Output"></div>
+    <br>
 
     <!--Part Three -->
     <h2>Step 3</h2>
     <h3>A simple addition application</h3>
-    Enter a number: <input id="part3first" placeholder="Please enter a number" type="number" />
+    <input id="part3first" placeholder="Please enter a number" type="number" />
     <br>
-    Enter a number: <input id="part3second" placeholder="enter a number" type="number"/>
+    <input id="part3second" placeholder="enter a number" type="number"/>
     <br>
-    <button id="req3Button" onclick="addition()">+</button>
+    <button id="req3Button" onclick="partThree()">+</button>
     <br>
-    The sum of the two numbers you entered is: <div id="req3Output"></div>
+    The sum of the two numbers you entered is: <div id="req3result"></div>
+    <br>
+
 
     <script>
       // part One
@@ -42,17 +46,17 @@
         outputElement.innerHTML = input;
       }
 
-      // req 2
-      function reqTwo() {
-        const input = document.getElementById('req2Input').value;
-        const outputElement = document.getElementById('req2Output');
+      // part two
+      function partTwo() {
+        const input = document.getElementById('part2Input').value;
+        const outputElement = document.getElementById('part2result');
         const inputInt = parseInt(input);
 
         if (inputInt !== NaN) {
           outputElement.innerHTML = sum(inputInt);
         }
       }
-      function sum(number) {
+      function addition(number) {
         let total = 0;
         for (let i = 1; i <= number; i++) {
           total += i;
@@ -60,12 +64,11 @@
         return total;
       }
 
-      // req 3
-      function add() {
-        const number1 = document.getElementById('req3Number1').value;
-        const number2 = document.getElementById('req3Number2').value;
-        const outputElement = document.getElementById('req3Output');
-        //  we need to check for valid input again...this time decimals would be ok...so lets use parseFloat instead of parseInt
+      // part three
+      function partThree() {
+        const number1 = document.getElementById('part3first').value;
+        const number2 = document.getElementById('part3second').value;
+        const outputElement = document.getElementById('req3result');
         const num1Float = parseFloat(number1);
         const num2Float = parseFloat(number2);
 
